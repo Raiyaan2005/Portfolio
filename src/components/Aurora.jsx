@@ -67,7 +67,7 @@ const AuroraPlane = ({ colorStops }) => {
 // We use 'memo' here to prevent re-renders when the parent scrolls.
 // The second argument compares the props to ensure we don't re-render 
 // just because the array reference changed.
-const Aurora = memo(({ colorStops = ["#951515", "#131d7c", "#1b0553"] }) => {
+const Aurora = memo(({ colorStops = ["#8d0a0a", "#162396", "#36148a"] }) => {
   return (
     <div style={{ width: '100%', height: '100%', background: '#000' }}>
       <Canvas 
