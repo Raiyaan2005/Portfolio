@@ -1,4 +1,4 @@
-import Aurora from '/Users/raiyaansyed/web/components/Aurora.jsx';
+import Aurora from 'components/Aurora.jsx';
 import { useState, useEffect, useRef } from 'react';
 
 // Define Aurora colors outside to prevent re-renders
