@@ -103,19 +103,19 @@ function App() {
       title: "Hospital Management System",
       description: "GUI-based hospital management application with patient/doctor registration, prescription tracking, and real-time search features. MySQL backend supporting concurrent data access for thousands of patient records with CRUD operations.",
       technologies: ["Python", "Tkinter", "MySQL"],
-      github: "https://github.com/raiyaansyed"
+      github: "https://github.com/Raiyaan2005"
     },
     {
       title: "Task Manager Application",
       description: "Student-focused productivity application built using Clean Architecture principles with 5 core use cases including User Authentication, Dashboard Management, Task Management, Calendar Synchronization, and API-driven Quote Generator. Achieved 100% line and branch coverage with JUnit testing.",
       technologies: ["Java", "Swing", "JUnit", "Git"],
-      github: "https://github.com/raiyaansyed"
+      github: "https://github.com/Raiyaan2005"
     },
     {
       title: "Employee Exit Clearance Workflow",
       description: "Collaborated with HR department to create a workflow system that reduced redundant manual work hours by over 30%. Led a team of interns and coordinated communication across the organization.",
       technologies: ["Web Development", "Workflow Automation"],
-      github: "https://github.com/raiyaansyed"
+      github: "https://github.com/Raiyaan2005"
     }
   ];
 
@@ -911,7 +911,8 @@ function App() {
                 gap: '2.5rem'
               }}>
                 <a
-                  href="https://github.com/raiyaansyed"
+                  href="https://github.com/Raiyaan2005
+          "
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
