@@ -1,4 +1,5 @@
 import Aurora from './components/Aurora.jsx';
+import ShinyText from './components/ShinyText.jsx';
 import { useState, useEffect, useRef } from 'react';
 
 // Define Aurora colors outside to prevent re-renders
@@ -53,7 +54,7 @@ function App() {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const accentColor = '#244588';
-  const accentColorLight = '#6092EB';
+  const accentColorLight = '#828D9E';
   const accentColorDim = 'rgba(36, 69, 136, 0.25)';
 
   useEffect(() => {
@@ -427,12 +428,16 @@ function App() {
               <h2 style={{
                 fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                 fontWeight: '700',
-                color: '#fff',
                 marginBottom: '2.5rem',
                 lineHeight: '1.15',
                 letterSpacing: '-0.02em'
               }}>
-                Crafting the future, one line at a time
+                <ShinyText 
+                  text="Crafting the future, one line at a time"
+                  speed={3}
+                  color="#fff"
+                  shineColor="#828D9E"
+                />
               </h2>
             </ScrollReveal>
 
@@ -452,7 +457,7 @@ function App() {
                   marginBottom: '1.5rem',
                   fontWeight: '400'
                 }}>
-                  I'm a third-year Computer Science student at the University of Toronto, specializing in 
+                  I'm a second-year Computer Science student at the University of Toronto, specializing in 
                   Software Engineering. My passion lies in building scalable, user-centric applications 
                   that solve real-world problems.
                 </p>
@@ -465,7 +470,7 @@ function App() {
                 }}>
                   With experience in full-stack development and a strong foundation in software architecture, 
                   I thrive in environments that challenge me to learn and innovate. I'm particularly interested 
-                  in backend systems, API design, and creating seamless user experiences.
+                  in systems design, cloud computing, and creating seamless user experiences through thoughtful design and efficient code.
                 </p>
                 <p style={{
                   fontSize: '1.125rem',
@@ -474,8 +479,8 @@ function App() {
                   margin: 0,
                   fontWeight: '400'
                 }}>
-                  When I'm not coding, you'll find me exploring new technologies, contributing to open-source 
-                  projects, or working on personal projects that push my boundaries.
+                  When I'm not coding, you'll find me learning new technologies, exploring the city or enjoying my time playing soccer.
+                  I'm always eager to connect with like-minded individuals and contribute to impactful projects. Let's build something amazing together!
                 </p>
               </div>
             </ScrollReveal>
@@ -508,12 +513,16 @@ function App() {
               <h2 style={{
                 fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                 fontWeight: '700',
-                color: '#fff',
                 marginBottom: '4rem',
                 lineHeight: '1.15',
                 letterSpacing: '-0.02em'
               }}>
-                Professional Journey
+                <ShinyText 
+                  text="Professional Journey"
+                  speed={3}
+                  color="#fff"
+                  shineColor="#828D9E"
+                />
               </h2>
             </ScrollReveal>
 
@@ -627,12 +636,16 @@ function App() {
               <h2 style={{
                 fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                 fontWeight: '700',
-                color: '#fff',
                 marginBottom: '4rem',
                 lineHeight: '1.15',
                 letterSpacing: '-0.02em'
               }}>
-                Featured Work
+                <ShinyText 
+                  text="Featured Work"
+                  speed={3}
+                  color="#fff"
+                  shineColor="#828D9E"
+                />
               </h2>
             </ScrollReveal>
 
@@ -759,12 +772,16 @@ function App() {
               <h2 style={{
                 fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                 fontWeight: '700',
-                color: '#fff',
                 marginBottom: '4rem',
                 lineHeight: '1.15',
                 letterSpacing: '-0.02em'
               }}>
-                Technical Expertise
+                <ShinyText 
+                  text="Technical Expertise"
+                  speed={3}
+                  color="#fff"
+                  shineColor="#828D9E"
+                />
               </h2>
             </ScrollReveal>
 
@@ -852,12 +869,16 @@ function App() {
               <h2 style={{
                 fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                 fontWeight: '700',
-                color: '#fff',
                 marginBottom: '2rem',
                 lineHeight: '1.15',
                 letterSpacing: '-0.02em'
               }}>
-                Let's Connect
+                <ShinyText 
+                  text="Let's Connect"
+                  speed={3}
+                  color="#fff"
+                  shineColor="#828D9E"
+                />
               </h2>
             </ScrollReveal>
             
