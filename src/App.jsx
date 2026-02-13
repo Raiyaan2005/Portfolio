@@ -3,7 +3,7 @@ import ShinyText from './components/ShinyText.jsx';
 import { useState, useEffect, useRef } from 'react';
 
 // Define Aurora colors outside to prevent re-renders
-const AURORA_COLORS = ["#951515", "#131d7c", "#1b0553"];
+const AURORA_COLORS = ["#880e0e", "#131d7c", "#1b0553"];
 
 // Scroll Reveal Component
 function ScrollReveal({ children, delay = 0, threshold = 0.1 }) {
@@ -49,12 +49,9 @@ function ScrollReveal({ children, delay = 0, threshold = 0.1 }) {
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isNavVisible, setIsNavVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   const accentColor = '#244588';
-  const accentColorLight = '#828D9E';
+  const accentColorLight = '828D9E';
   const accentColorDim = 'rgba(36, 69, 136, 0.25)';
 
   useEffect(() => {
@@ -74,28 +71,16 @@ function App() {
           }
         }
       }
-
-      const currentScrollY = window.scrollY;
-      if (currentScrollY < 50) {
-        setIsNavVisible(true);
-      } else if (currentScrollY > lastScrollY) {
-        setIsNavVisible(false);
-        setIsMenuOpen(false);
-      } else {
-        setIsNavVisible(true);
-      }
-      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
     }
   };
 
@@ -177,121 +162,62 @@ function App() {
         <Aurora colorStops={AURORA_COLORS} />
       </div>
 
-      {/* Navigation - Apple Style */}
-      <nav style={{
+      {/* Floating Navigation Buttons */}
+      <div style={{
         position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
+        right: '2rem',
+        top: '50%',
+        transform: 'translateY(-50%)',
         zIndex: 100,
-        padding: '0.75rem 0',
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backdropFilter: 'blur(40px) saturate(180%)',
-        backgroundColor: 'rgba(10, 10, 15, 0.72)',
-        borderBottom: '0.5px solid rgba(255, 255, 255, 0.08)',
-        transform: isNavVisible ? 'translateY(0)' : 'translateY(-100%)',
-        transition: 'transform 0.5s cubic-bezier(0.28, 0.11, 0.32, 1)'
+        flexDirection: 'column',
+        gap: '0.5rem',
+        alignItems: 'flex-end'
       }}>
-        <div style={{
-          maxWidth: '980px',
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '0 2rem',
-          position: 'relative'
-        }}>
-          {/* Desktop Menu */}
-          <div style={{
-            display: window.innerWidth > 768 ? 'flex' : 'none',
-            gap: '2rem',
-            alignItems: 'center'
-          }}>
-            {['Home', 'About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item.toLowerCase())}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  color: '#fff',
-                  fontSize: '0.75rem',
-                  fontWeight: '400',
-                  cursor: 'pointer',
-                  padding: '0.5rem 0',
-                  transition: 'opacity 0.3s ease',
-                  opacity: activeSection === item.toLowerCase() ? 1 : 0.65,
-                  letterSpacing: '0.3px',
-                  position: 'relative'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
-                onMouseLeave={(e) => e.currentTarget.style.opacity = activeSection === item.toLowerCase() ? '1' : '0.65'}
-              >
-                {item.toUpperCase()}
-              </button>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            style={{
-              display: window.innerWidth <= 768 ? 'block' : 'none',
-              background: 'none',
-              border: 'none',
-              color: '#fff',
-              fontSize: '1.5rem',
-              cursor: 'pointer',
-              padding: '0.5rem',
-              position: 'absolute',
-              right: '2rem'
-            }}
-          >
-            {isMenuOpen ? '✕' : '☰'}
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div style={{
-          position: 'fixed',
-          top: '3.5rem',
-          left: 0,
-          right: 0,
-          zIndex: 99,
-          backdropFilter: 'blur(40px) saturate(180%)',
-          backgroundColor: 'rgba(10, 10, 15, 0.95)',
-          borderBottom: '0.5px solid rgba(255, 255, 255, 0.08)',
-          animation: 'slideDown 0.3s ease-out'
-        }}>
-          {['Home', 'About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
+        {['Home', 'About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => {
+          const isActive = activeSection === item.toLowerCase();
+          return (
             <button
               key={item}
               onClick={() => scrollToSection(item.toLowerCase())}
+              title={!isActive ? item : undefined}
               style={{
-                width: '100%',
-                background: 'none',
-                border: 'none',
-                color: '#fff',
-                fontSize: '1rem',
-                fontWeight: '400',
+                padding: isActive ? '0.5rem 1rem' : '0',
+                width: isActive ? 'auto' : '12px',
+                height: isActive ? 'auto' : '12px',
+                borderRadius: isActive ? '20px' : '50%',
+                border: isActive ? 'none' : '1.5px solid rgba(255, 255, 255, 0.3)',
+                background: isActive ? '#fff' : 'rgba(255, 255, 255, 0.1)',
+                color: isActive ? '#0a0a0f' : 'transparent',
                 cursor: 'pointer',
-                padding: '1rem 2rem',
-                textAlign: 'left',
-                transition: 'background 0.2s ease',
-                borderBottom: '0.5px solid rgba(255, 255, 255, 0.05)'
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                backdropFilter: 'blur(10px)',
+                fontSize: '0.75rem',
+                fontWeight: '600',
+                letterSpacing: '0.5px',
+                textTransform: 'uppercase',
+                whiteSpace: 'nowrap'
               }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+              onMouseEnter={(e) => {
+                if (!isActive) {
+                  e.currentTarget.style.transform = 'scale(1.2)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!isActive) {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                }
+              }}
             >
-              {item}
+              {isActive ? item : ''}
             </button>
-          ))}
-        </div>
-      )}
+          );
+        })}
+      </div>
 
       {/* Main Content */}
       <div style={{ position: 'relative', zIndex: 1 }}>
@@ -413,7 +339,7 @@ function App() {
           <div style={{ maxWidth: '800px', width: '100%' }}>
             <ScrollReveal>
               <div style={{
-                fontSize: '0.875rem',
+                fontSize: '1rem',
                 fontWeight: '500',
                 color: accentColorLight,
                 marginBottom: '1rem',
@@ -428,7 +354,7 @@ function App() {
               <h2 style={{
                 fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                 fontWeight: '700',
-                marginBottom: '2.5rem',
+                marginBottom: '1.25rem',
                 lineHeight: '1.15',
                 letterSpacing: '-0.02em'
               }}>
@@ -436,7 +362,7 @@ function App() {
                   text="Crafting the future, one line at a time"
                   speed={3}
                   color="#fff"
-                  shineColor="#828D9E"
+                  shineColor="828D9E"
                 />
               </h2>
             </ScrollReveal>
@@ -498,7 +424,7 @@ function App() {
           <div style={{ maxWidth: '900px', width: '100%' }}>
             <ScrollReveal>
               <div style={{
-                fontSize: '0.875rem',
+                fontSize: '1rem',
                 fontWeight: '500',
                 color: accentColorLight,
                 marginBottom: '1rem',
@@ -513,7 +439,7 @@ function App() {
               <h2 style={{
                 fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                 fontWeight: '700',
-                marginBottom: '4rem',
+                marginBottom: '2rem',
                 lineHeight: '1.15',
                 letterSpacing: '-0.02em'
               }}>
@@ -521,7 +447,7 @@ function App() {
                   text="Professional Journey"
                   speed={3}
                   color="#fff"
-                  shineColor="#828D9E"
+                  shineColor="828D9E"
                 />
               </h2>
             </ScrollReveal>
@@ -621,7 +547,7 @@ function App() {
           <div style={{ maxWidth: '1200px', width: '100%' }}>
             <ScrollReveal>
               <div style={{
-                fontSize: '0.875rem',
+                fontSize: '1rem',
                 fontWeight: '500',
                 color: accentColorLight,
                 marginBottom: '1rem',
@@ -636,7 +562,7 @@ function App() {
               <h2 style={{
                 fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                 fontWeight: '700',
-                marginBottom: '4rem',
+                marginBottom: '2rem',
                 lineHeight: '1.15',
                 letterSpacing: '-0.02em'
               }}>
@@ -644,7 +570,7 @@ function App() {
                   text="Featured Work"
                   speed={3}
                   color="#fff"
-                  shineColor="#828D9E"
+                  shineColor="828D9E"
                 />
               </h2>
             </ScrollReveal>
@@ -757,7 +683,7 @@ function App() {
           <div style={{ maxWidth: '1200px', width: '100%' }}>
             <ScrollReveal>
               <div style={{
-                fontSize: '0.875rem',
+                fontSize: '1rem',
                 fontWeight: '500',
                 color: accentColorLight,
                 marginBottom: '1rem',
@@ -772,7 +698,7 @@ function App() {
               <h2 style={{
                 fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                 fontWeight: '700',
-                marginBottom: '4rem',
+                marginBottom: '2rem',
                 lineHeight: '1.15',
                 letterSpacing: '-0.02em'
               }}>
@@ -780,7 +706,7 @@ function App() {
                   text="Technical Expertise"
                   speed={3}
                   color="#fff"
-                  shineColor="#828D9E"
+                  shineColor="828D9E"
                 />
               </h2>
             </ScrollReveal>
@@ -854,7 +780,7 @@ function App() {
           <div style={{ maxWidth: '700px', width: '100%', textAlign: 'center' }}>
             <ScrollReveal>
               <div style={{
-                fontSize: '0.875rem',
+                fontSize: '1rem',
                 fontWeight: '500',
                 color: accentColorLight,
                 marginBottom: '1rem',
@@ -869,7 +795,7 @@ function App() {
               <h2 style={{
                 fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                 fontWeight: '700',
-                marginBottom: '2rem',
+                marginBottom: '1.5rem',
                 lineHeight: '1.15',
                 letterSpacing: '-0.02em'
               }}>
@@ -877,7 +803,7 @@ function App() {
                   text="Let's Connect"
                   speed={3}
                   color="#fff"
-                  shineColor="#828D9E"
+                  shineColor="828D9E"
                 />
               </h2>
             </ScrollReveal>
