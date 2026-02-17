@@ -111,9 +111,9 @@ function App() {
       company: "BPL Medical Technologies Pvt. Ltd.",
       period: "April 2023 - June 2023",
       description: [
-        "Collaborated with the HR department to create an Employee Exit Clearance Workflow system, reducing redundant manual work hours by over 30%",
-        "Served as team lead for a small team of interns and coordinated communication within the group and with the organization",
-        "Developed workflow automation solutions to streamline HR processes"
+        "● Collaborated with the HR department to create an Employee Exit Clearance Workflow system, reducing redundant manual work hours by over 30%.",
+        "● Served as team lead for a small team of interns and coordinated communication within the group and with the organization.",
+        "● Developed workflow automation solutions to streamline HR processes."
       ]
     },
     {
@@ -121,9 +121,9 @@ function App() {
       company: "ILM Internship Program",
       period: "April 2022 - May 2022",
       description: [
-        "Gained foundational knowledge of AI model workings while collaborating with an independent entrepreneur",
-        "Designed and implemented an AI model using Pandas and NumPy, processing diverse demographic datasets",
-        "Achieved over 85% accuracy in model predictions, providing actionable and reliable data insights"
+        "● Gained foundational knowledge of AI model workings while collaborating with an independent entrepreneur.",
+        "● Designed and implemented an AI model using Pandas and NumPy, processing diverse demographic datasets.",
+        "● Achieved over 85% accuracy in model predictions, providing actionable and reliable data insights."
       ]
     }
   ];
