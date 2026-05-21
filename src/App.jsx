@@ -51,7 +51,7 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   const accentColor = '#244588';
-  const accentColorLight = '828D9E';
+  const accentColorLight = '#828D9E';
   const accentColorDim = 'rgba(36, 69, 136, 0.25)';
 
   useEffect(() => {
@@ -107,8 +107,8 @@ function App() {
       company: "BPL Medical Technologies Pvt. Ltd.",
       period: "April 2023 - June 2023",
       description: [
-        "• Took end-to-end ownership of an Employee Exit Clearance Workflow system in collaboration with HR stakeholders, reducing redundant manual work hours by over 30%.",
-        "• Led a team of 3 interns in an agile, iterative workflow, managing stakeholder communication and driving the project to completion on schedule."
+        "Took end-to-end ownership of an Employee Exit Clearance Workflow system in collaboration with HR stakeholders, reducing redundant manual work hours by over 30%.",
+        "Led a team of 3 interns in an agile, iterative workflow, managing stakeholder communication and driving the project to completion on schedule."
       ]
     },
     {
@@ -116,7 +116,7 @@ function App() {
       company: "ILM Internship Program",
       period: "April 2022 - May 2022",
       description: [
-        "• Designed and implemented a machine learning model using Pandas and NumPy to process large-scale demographic datasets (thousands of entries), achieving over 85% prediction accuracy and delivering actionable insights to a client stakeholder."
+        "Designed and implemented a machine learning model using Pandas and NumPy to process large-scale demographic datasets (thousands of entries), achieving over 85% prediction accuracy and delivering actionable insights to a client stakeholder."
       ]
     }
   ];
@@ -259,8 +259,8 @@ function App() {
                 maxWidth: '700px',
                 fontWeight: '400'
               }}>
-                Building elegant solutions to complex problems. 
-                Passionate about software engineering and creating impactful digital experiences.
+                Full-stack developer with production experience in React, Node.js, Java, and Python.
+                I build clean, well-tested systems — from normalized schemas to component-driven UIs — and thrive in fast-moving agile teams.
               </p>
             </ScrollReveal>
 
@@ -355,7 +355,7 @@ function App() {
                   text="Crafting the future, one line at a time"
                   speed={3}
                   color="#fff"
-                  shineColor="828D9E"
+                  shineColor="#828D9E"
                 />
               </h2>
             </ScrollReveal>
@@ -440,88 +440,119 @@ function App() {
                   text="Professional Journey"
                   speed={3}
                   color="#fff"
-                  shineColor="828D9E"
+                  shineColor="#828D9E"
                 />
               </h2>
             </ScrollReveal>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <div>
               {experiences.map((exp, index) => (
                 <ScrollReveal key={index} delay={0.1 * (index + 2)}>
-                  <div style={{
-                    background: 'rgba(255, 255, 255, 0.03)',
-                    backdropFilter: 'blur(20px)',
-                    border: '0.5px solid rgba(255, 255, 255, 0.08)',
-                    borderRadius: '24px',
-                    padding: '2.5rem',
-                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                    cursor: 'default'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                    e.currentTarget.style.transform = 'translateY(-4px)';
-                    e.currentTarget.style.boxShadow = '0 20px 60px rgba(0, 0, 0, 0.3)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
-                  >
-                    <div style={{ marginBottom: '1.5rem' }}>
-                      <h3 style={{
-                        fontSize: '1.5rem',
-                        fontWeight: '600',
-                        color: '#fff',
-                        margin: '0 0 0.5rem 0',
-                        letterSpacing: '-0.01em'
-                      }}>
-                        {exp.role}
-                      </h3>
+                  <div style={{ display: 'flex', gap: '2rem' }}>
+                    {/* Timeline spine */}
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0, width: '20px' }}>
                       <div style={{
-                        fontSize: '1.05rem',
-                        fontWeight: '500',
-                        color: accentColorLight,
-                        marginBottom: '0.25rem'
-                      }}>
-                        {exp.company}
-                      </div>
+                        width: '13px',
+                        height: '13px',
+                        borderRadius: '50%',
+                        background: accentColorLight,
+                        border: '2px solid rgba(130, 141, 158, 0.3)',
+                        flexShrink: 0,
+                        marginTop: '0.45rem'
+                      }} />
+                      {index < experiences.length - 1 && (
+                        <div style={{
+                          width: '1px',
+                          flex: 1,
+                          minHeight: '3rem',
+                          marginTop: '0.5rem',
+                          background: 'linear-gradient(to bottom, rgba(130, 141, 158, 0.25), transparent)'
+                        }} />
+                      )}
+                    </div>
+
+                    {/* Card */}
+                    <div style={{
+                      flex: 1,
+                      paddingBottom: index < experiences.length - 1 ? '2.5rem' : 0
+                    }}>
                       <div style={{
-                        fontSize: '0.95rem',
-                        color: 'rgba(255, 255, 255, 0.5)',
-                        fontWeight: '400'
-                      }}>
-                        {exp.period}
+                        background: 'rgba(255, 255, 255, 0.03)',
+                        backdropFilter: 'blur(20px)',
+                        border: '0.5px solid rgba(255, 255, 255, 0.08)',
+                        borderRadius: '20px',
+                        padding: '2rem 2.5rem',
+                        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                        e.currentTarget.style.borderColor = 'rgba(130, 141, 158, 0.2)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                      }}
+                      >
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                          <div>
+                            <h3 style={{
+                              fontSize: '1.25rem',
+                              fontWeight: '600',
+                              color: '#fff',
+                              margin: '0 0 0.3rem 0',
+                              letterSpacing: '-0.01em'
+                            }}>
+                              {exp.role}
+                            </h3>
+                            <div style={{
+                              fontSize: '0.95rem',
+                              fontWeight: '500',
+                              color: accentColorLight
+                            }}>
+                              {exp.company}
+                            </div>
+                          </div>
+                          <div style={{
+                            fontSize: '0.8rem',
+                            color: 'rgba(255, 255, 255, 0.4)',
+                            fontWeight: '500',
+                            letterSpacing: '0.3px',
+                            background: 'rgba(255, 255, 255, 0.05)',
+                            border: '0.5px solid rgba(255, 255, 255, 0.08)',
+                            borderRadius: '980px',
+                            padding: '0.35rem 0.875rem',
+                            whiteSpace: 'nowrap'
+                          }}>
+                            {exp.period}
+                          </div>
+                        </div>
+                        <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+                          {exp.description.map((item, i) => (
+                            <li key={i} style={{
+                              fontSize: '0.975rem',
+                              lineHeight: '1.7',
+                              color: 'rgba(255, 255, 255, 0.72)',
+                              marginBottom: i < exp.description.length - 1 ? '0.65rem' : 0,
+                              paddingLeft: '1.25rem',
+                              position: 'relative',
+                              fontWeight: '400'
+                            }}>
+                              <span style={{
+                                position: 'absolute',
+                                left: 0,
+                                top: '0.62rem',
+                                width: '4px',
+                                height: '4px',
+                                background: accentColorLight,
+                                borderRadius: '50%',
+                                opacity: 0.7
+                              }} />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
-                    <ul style={{
-                      margin: 0,
-                      padding: '0 0 0 1.25rem',
-                      listStyle: 'none'
-                    }}>
-                      {exp.description.map((item, i) => (
-                        <li key={i} style={{
-                          fontSize: '1rem',
-                          lineHeight: '1.7',
-                          color: 'rgba(255, 255, 255, 0.75)',
-                          marginBottom: i < exp.description.length - 1 ? '0.75rem' : 0,
-                          position: 'relative',
-                          paddingLeft: '1.5rem',
-                          fontWeight: '400'
-                        }}>
-                          <span style={{
-                            position: 'absolute',
-                            left: 0,
-                            top: '0.6rem',
-                            width: '4px',
-                            height: '4px',
-                            background: accentColorLight,
-                            borderRadius: '50%'
-                          }} />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </ScrollReveal>
               ))}
@@ -563,112 +594,132 @@ function App() {
                   text="Featured Work"
                   speed={3}
                   color="#fff"
-                  shineColor="828D9E"
+                  shineColor="#828D9E"
                 />
               </h2>
             </ScrollReveal>
 
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '2rem'
-            }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {projects.map((project, index) => (
                 <ScrollReveal key={index} delay={0.1 * (index + 2)}>
                   <div style={{
                     background: 'rgba(255, 255, 255, 0.03)',
                     backdropFilter: 'blur(20px)',
                     border: '0.5px solid rgba(255, 255, 255, 0.08)',
-                    borderRadius: '24px',
-                    padding: '2.5rem',
-                    height: '100%',
+                    borderLeft: `2px solid ${accentColorLight}`,
+                    borderRadius: '20px',
+                    padding: '2.5rem 3rem',
                     display: 'flex',
-                    flexDirection: 'column',
-                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                    cursor: 'default'
+                    gap: '3rem',
+                    alignItems: 'flex-start',
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                    e.currentTarget.style.transform = 'translateY(-8px)';
-                    e.currentTarget.style.boxShadow = '0 20px 60px rgba(0, 0, 0, 0.3)';
+                    e.currentTarget.style.borderLeftColor = '#fff';
+                    e.currentTarget.style.boxShadow = '0 20px 60px rgba(0, 0, 0, 0.25)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)';
-                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.borderLeftColor = accentColorLight;
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                   >
-                    <h3 style={{
-                      fontSize: '1.5rem',
-                      fontWeight: '600',
-                      color: '#fff',
-                      margin: '0 0 0.25rem 0',
-                      letterSpacing: '-0.01em'
-                    }}>
-                      {project.title}
-                    </h3>
-                    {project.subtitle && (
+                    {/* Left meta column */}
+                    <div style={{ width: '260px', flexShrink: 0 }}>
                       <div style={{
-                        fontSize: '0.9rem',
-                        color: 'rgba(255, 255, 255, 0.45)',
-                        fontWeight: '400',
-                        marginBottom: '1rem',
-                        letterSpacing: '0.2px'
+                        fontSize: '0.7rem',
+                        fontWeight: '700',
+                        letterSpacing: '3px',
+                        color: 'rgba(255, 255, 255, 0.2)',
+                        marginBottom: '0.75rem'
                       }}>
-                        {project.subtitle}
+                        {String(index + 1).padStart(2, '0')}
                       </div>
-                    )}
-                    <p style={{
-                      fontSize: '1rem',
-                      lineHeight: '1.7',
-                      color: 'rgba(255, 255, 255, 0.7)',
-                      marginBottom: '1.5rem',
-                      flex: 1,
-                      fontWeight: '400'
-                    }}>
-                      {project.description}
-                    </p>
-                    <div style={{
-                      display: 'flex',
-                      flexWrap: 'wrap',
-                      gap: '0.5rem',
-                      marginBottom: '1.5rem'
-                    }}>
-                      {project.technologies.map((tech, i) => (
-                        <span key={i} style={{
-                          fontSize: '0.8rem',
-                          padding: '0.4rem 0.875rem',
-                          background: 'rgba(255, 255, 255, 0.08)',
-                          border: '0.5px solid rgba(255, 255, 255, 0.1)',
-                          borderRadius: '980px',
-                          color: 'rgba(255, 255, 255, 0.85)',
-                          fontWeight: '500',
-                          letterSpacing: '0.3px'
+                      <h3 style={{
+                        fontSize: '1.6rem',
+                        fontWeight: '700',
+                        color: '#fff',
+                        margin: '0 0 0.25rem 0',
+                        letterSpacing: '-0.02em'
+                      }}>
+                        {project.title}
+                      </h3>
+                      {project.subtitle && (
+                        <div style={{
+                          fontSize: '0.85rem',
+                          color: 'rgba(255, 255, 255, 0.4)',
+                          fontWeight: '400',
+                          marginBottom: '1.25rem',
+                          letterSpacing: '0.2px'
                         }}>
-                          {tech}
-                        </span>
-                      ))}
+                          {project.subtitle}
+                        </div>
+                      )}
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1.5rem' }}>
+                        {project.technologies.map((tech, i) => (
+                          <span key={i} style={{
+                            fontSize: '0.75rem',
+                            padding: '0.3rem 0.75rem',
+                            background: 'rgba(130, 141, 158, 0.1)',
+                            border: '0.5px solid rgba(130, 141, 158, 0.2)',
+                            borderRadius: '980px',
+                            color: accentColorLight,
+                            fontWeight: '500',
+                            letterSpacing: '0.2px'
+                          }}>
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontSize: '0.875rem',
+                          color: accentColorLight,
+                          textDecoration: 'none',
+                          fontWeight: '500',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.4rem',
+                          transition: 'all 0.3s ease',
+                          letterSpacing: '0.3px'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.color = '#fff';
+                          e.currentTarget.style.gap = '0.65rem';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.color = accentColorLight;
+                          e.currentTarget.style.gap = '0.4rem';
+                        }}
+                      >
+                        View on GitHub →
+                      </a>
                     </div>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        fontSize: '0.95rem',
-                        color: accentColorLight,
-                        textDecoration: 'none',
-                        fontWeight: '500',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        transition: 'opacity 0.3s ease',
-                        letterSpacing: '0.3px'
-                      }}
-                      onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
-                      onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-                    >
-                      View on GitHub →
-                    </a>
+
+                    {/* Divider */}
+                    <div style={{
+                      width: '1px',
+                      alignSelf: 'stretch',
+                      background: 'rgba(255, 255, 255, 0.06)',
+                      flexShrink: 0
+                    }} />
+
+                    {/* Right description column */}
+                    <div style={{ flex: 1 }}>
+                      <p style={{
+                        fontSize: '1rem',
+                        lineHeight: '1.8',
+                        color: 'rgba(255, 255, 255, 0.7)',
+                        margin: 0,
+                        fontWeight: '400'
+                      }}>
+                        {project.description}
+                      </p>
+                    </div>
                   </div>
                 </ScrollReveal>
               ))}
@@ -710,7 +761,7 @@ function App() {
                   text="Technical Expertise"
                   speed={3}
                   color="#fff"
-                  shineColor="828D9E"
+                  shineColor="#828D9E"
                 />
               </h2>
             </ScrollReveal>
@@ -807,7 +858,7 @@ function App() {
                   text="Let's Connect"
                   speed={3}
                   color="#fff"
-                  shineColor="828D9E"
+                  shineColor="#828D9E"
                 />
               </h2>
             </ScrollReveal>
