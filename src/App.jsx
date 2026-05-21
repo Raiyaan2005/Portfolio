@@ -642,7 +642,7 @@ function App() {
                         margin: '0 0 0.25rem 0',
                         letterSpacing: '-0.02em'
                       }}>
-                        {project.title}
+                        <ShinyText text={project.title} speed={3} color="#fff" shineColor="#828D9E" />
                       </h3>
                       {project.subtitle && (
                         <div style={{
