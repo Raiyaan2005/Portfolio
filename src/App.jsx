@@ -86,21 +86,17 @@ function App() {
 
   const projects = [
     {
-      title: "Hospital Management System",
-      description: "GUI-based hospital management application with patient/doctor registration, prescription tracking, and real-time search features. MySQL backend supporting concurrent data access for thousands of patient records with CRUD operations.",
-      technologies: ["Python", "Tkinter", "MySQL"],
+      title: "NovaCare",
+      subtitle: "Hospital Management System",
+      description: "Full-stack hospital management desktop application supporting patient/doctor registration, prescription tracking, and real-time search across thousands of records. Designed a normalized MySQL relational schema with optimized queries and indexing, and built a multi-frame Tkinter UI with dynamic tables and input validation; reducing client-side data entry errors by ~40%. CRUD operations are fully decoupled from the UI via a service-oriented design.",
+      technologies: ["Python", "Tkinter", "MySQL", "CRUD"],
       github: "https://github.com/Raiyaan2005"
     },
     {
-      title: "Task Manager Application",
-      description: "Student-focused productivity application built using Clean Architecture principles with 5 core use cases including User Authentication, Dashboard Management, Task Management, Calendar Synchronization, and API-driven Quote Generator. Achieved 100% line and branch coverage with JUnit testing.",
-      technologies: ["Java", "Swing", "JUnit", "Git"],
-      github: "https://github.com/Raiyaan2005"
-    },
-    {
-      title: "Employee Exit Clearance Workflow",
-      description: "Collaborated with HR department to create a workflow system that reduced redundant manual work hours by over 30%. Led a team of interns and coordinated communication across the organization.",
-      technologies: ["Web Development", "Workflow Automation"],
+      title: "LockIn",
+      subtitle: "Student Productivity Application",
+      description: "Collaborated in a team of 5 to deliver a student productivity application in Java, applying Clean Architecture to strictly separate Presentation, Use Case, and Entity layers. Authored technical design docs for 5 core use cases: Authentication, Dashboard, Task Management, Calendar Sync, and an API-driven Quote Generator. Achieved 100% line and branch coverage with JUnit and enforced code quality via branch protection rules and mandatory peer reviews.",
+      technologies: ["Java", "Swing", "JUnit", "Git", "GitHub", "Agile"],
       github: "https://github.com/Raiyaan2005"
     }
   ];
@@ -111,9 +107,8 @@ function App() {
       company: "BPL Medical Technologies Pvt. Ltd.",
       period: "April 2023 - June 2023",
       description: [
-        "● Collaborated with the HR department to create an Employee Exit Clearance Workflow system, reducing redundant manual work hours by over 30%.",
-        "● Served as team lead for a small team of interns and coordinated communication within the group and with the organization.",
-        "● Developed workflow automation solutions to streamline HR processes."
+        "• Took end-to-end ownership of an Employee Exit Clearance Workflow system in collaboration with HR stakeholders, reducing redundant manual work hours by over 30%.",
+        "• Led a team of 3 interns in an agile, iterative workflow, managing stakeholder communication and driving the project to completion on schedule."
       ]
     },
     {
@@ -121,18 +116,16 @@ function App() {
       company: "ILM Internship Program",
       period: "April 2022 - May 2022",
       description: [
-        "● Gained foundational knowledge of AI model workings while collaborating with an independent entrepreneur.",
-        "● Designed and implemented an AI model using Pandas and NumPy, processing diverse demographic datasets.",
-        "● Achieved over 85% accuracy in model predictions, providing actionable and reliable data insights."
+        "• Designed and implemented a machine learning model using Pandas and NumPy to process large-scale demographic datasets (thousands of entries), achieving over 85% prediction accuracy and delivering actionable insights to a client stakeholder."
       ]
     }
   ];
 
   const skills = {
-    "Programming Languages": ["Java", "Python", "C/C++", "JavaScript", "SQL", "HTML/CSS", "R"],
-    "Web & Backend": ["React", "Node.js", "MongoDB", "PostgreSQL", "REST APIs", "CRUD Operations"],
-    "Tools & DevOps": ["AWS", "Git", "GitHub", "Docker", "VS Code", "JUnit", "Figma", "Unix Shell"],
-    "Soft Skills": ["Leadership", "Communication", "Analytical Thinking", "Teamwork", "Problem Solving"]
+    "Programming Languages": ["Python", "Java", "C/C++", "JavaScript", "SQL", "HTML/CSS", "R"],
+    "Web & Backend": ["React", "AWS", "Pandas", "NumPy", "Node.js", "PostgreSQL", "MongoDB", "CRUD Operations", "REST APIs", "Linux/Unix"],
+    "Tools": ["Git", "GitHub", "MS Office", "VS Code", "Figma"],
+    "Concepts": ["AI/LLM Tools", "Automated Testing", "OOP", "UML", "Design Patterns", "Systems Design", "Agile"]
   };
 
   return (
@@ -609,11 +602,22 @@ function App() {
                       fontSize: '1.5rem',
                       fontWeight: '600',
                       color: '#fff',
-                      margin: '0 0 1rem 0',
+                      margin: '0 0 0.25rem 0',
                       letterSpacing: '-0.01em'
                     }}>
                       {project.title}
                     </h3>
+                    {project.subtitle && (
+                      <div style={{
+                        fontSize: '0.9rem',
+                        color: 'rgba(255, 255, 255, 0.45)',
+                        fontWeight: '400',
+                        marginBottom: '1rem',
+                        letterSpacing: '0.2px'
+                      }}>
+                        {project.subtitle}
+                      </div>
+                    )}
                     <p style={{
                       fontSize: '1rem',
                       lineHeight: '1.7',
