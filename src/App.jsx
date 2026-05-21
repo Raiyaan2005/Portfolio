@@ -3,7 +3,7 @@ import ShinyText from './components/ShinyText.jsx';
 import { useState, useEffect, useRef } from 'react';
 
 // Define Aurora colors outside to prevent re-renders
-const AURORA_COLORS = ["#0e3a88", "#0d6e75", "#1b0553"];
+const AURORA_COLORS = ["#0e3a88", "#0d6e75", "#033d2a"];
 
 // Scroll Reveal Component
 function ScrollReveal({ children, delay = 0, threshold = 0.1 }) {
