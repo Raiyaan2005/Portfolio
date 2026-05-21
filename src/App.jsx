@@ -90,14 +90,14 @@ function App() {
       subtitle: "Hospital Management System",
       description: "Full-stack hospital management desktop application supporting patient/doctor registration, prescription tracking, and real-time search across thousands of records. Designed a normalized MySQL relational schema with optimized queries and indexing, and built a multi-frame Tkinter UI with dynamic tables and input validation; reducing client-side data entry errors by ~40%. CRUD operations are fully decoupled from the UI via a service-oriented design.",
       technologies: ["Python", "Tkinter", "MySQL", "CRUD"],
-      github: "https://github.com/Raiyaan2005"
+      github: "https://github.com/Raiyaan2005/NovaCare"
     },
     {
       title: "LockIn",
       subtitle: "Student Productivity Application",
       description: "Collaborated in a team of 5 to deliver a student productivity application in Java, applying Clean Architecture to strictly separate Presentation, Use Case, and Entity layers. Authored technical design docs for 5 core use cases: Authentication, Dashboard, Task Management, Calendar Sync, and an API-driven Quote Generator. Achieved 100% line and branch coverage with JUnit and enforced code quality via branch protection rules and mandatory peer reviews.",
       technologies: ["Java", "Swing", "JUnit", "Git", "GitHub", "Agile"],
-      github: "https://github.com/Raiyaan2005"
+      github: "https://github.com/Raiyaan2005/lockin-app"
     }
   ];
 
@@ -376,8 +376,7 @@ function App() {
                   marginBottom: '1.5rem',
                   fontWeight: '400'
                 }}>
-                  I'm a second-year Computer Science student at the University of Toronto, specializing in 
-                  Software Engineering. My passion lies in building scalable, user-centric applications 
+                  I'm a second-year student studying Computer Science at the University of Toronto. My passion lies in building scalable, user-centric applications
                   that solve real-world problems.
                 </p>
                 <p style={{
@@ -871,39 +870,68 @@ function App() {
                 lineHeight: '1.7',
                 fontWeight: '400'
               }}>
-                I'm actively seeking internship opportunities and co-op positions for Summer 2026. 
-                Whether you have an opportunity, a question, or just want to connect, feel free to reach out.
+                I'm actively seeking internship and co-op opportunities.
+                Whether you have a role, a question, or just want to connect, feel free to reach out.
               </p>
             </ScrollReveal>
             
             <ScrollReveal delay={0.3}>
-              <a
-                href="mailto:raiyaan.syed@mail.utoronto.ca"
-                style={{
-                  display: 'inline-block',
-                  padding: '1rem 2.5rem',
-                  fontSize: '1rem',
-                  fontWeight: '500',
-                  background: '#fff',
-                  color: '#000',
-                  border: 'none',
-                  borderRadius: '980px',
-                  textDecoration: 'none',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                  marginBottom: '3rem',
-                  letterSpacing: '0.3px'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.transform = 'scale(1.02)';
-                  e.target.style.boxShadow = '0 8px 30px rgba(255, 255, 255, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.transform = 'scale(1)';
-                  e.target.style.boxShadow = 'none';
-                }}
-              >
-                Email Me
-              </a>
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '3rem' }}>
+                <a
+                  href="mailto:raiyaan.syed@mail.utoronto.ca"
+                  style={{
+                    display: 'inline-block',
+                    padding: '1rem 2.5rem',
+                    fontSize: '1rem',
+                    fontWeight: '500',
+                    background: '#fff',
+                    color: '#000',
+                    border: 'none',
+                    borderRadius: '980px',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    letterSpacing: '0.3px'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'scale(1.02)';
+                    e.target.style.boxShadow = '0 8px 30px rgba(255, 255, 255, 0.15)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'scale(1)';
+                    e.target.style.boxShadow = 'none';
+                  }}
+                >
+                  Email Me
+                </a>
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-block',
+                    padding: '1rem 2.5rem',
+                    fontSize: '1rem',
+                    fontWeight: '500',
+                    background: 'transparent',
+                    color: '#fff',
+                    border: '1.5px solid rgba(255, 255, 255, 0.2)',
+                    borderRadius: '980px',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    letterSpacing: '0.3px'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+                    e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                    e.target.style.backgroundColor = 'transparent';
+                  }}
+                >
+                  Download Resume
+                </a>
+              </div>
             </ScrollReveal>
             
             <ScrollReveal delay={0.4}>
@@ -913,8 +941,7 @@ function App() {
                 gap: '2.5rem'
               }}>
                 <a
-                  href="https://github.com/Raiyaan2005
-          "
+                  href="https://github.com/Raiyaan2005"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
