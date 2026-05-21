@@ -259,8 +259,8 @@ function App() {
                 maxWidth: '700px',
                 fontWeight: '400'
               }}>
-                Full-stack developer with production experience in React, Node.js, Java, and Python.
-                I build clean, well-tested systems — from normalized schemas to component-driven UIs — and thrive in fast-moving agile teams.
+                Full-stack developer with production experience in Python, Java, React, Node.js, and SQL.
+                I build clean, well-tested systems, from normalized schemas to component-driven UIs and thrive in fast-moving agile teams.
               </p>
             </ScrollReveal>
 
