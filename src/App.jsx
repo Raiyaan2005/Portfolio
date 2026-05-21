@@ -904,7 +904,7 @@ function App() {
                   Email Me
                 </a>
                 <a
-                  href="/resume.pdf"
+                  href="/Raiyaan-Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
