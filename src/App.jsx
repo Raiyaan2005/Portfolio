@@ -880,17 +880,21 @@ function App() {
                 <a
                   href="mailto:raiyaan.syed@mail.utoronto.ca"
                   style={{
-                    display: 'inline-block',
-                    padding: '1rem 2.5rem',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '0.875rem 2.5rem',
                     fontSize: '1rem',
+                    lineHeight: '1',
                     fontWeight: '500',
                     background: '#fff',
                     color: '#000',
-                    border: 'none',
+                    border: '1.5px solid transparent',
                     borderRadius: '980px',
                     textDecoration: 'none',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    letterSpacing: '0.3px'
+                    letterSpacing: '0.3px',
+                    boxSizing: 'border-box'
                   }}
                   onMouseEnter={(e) => {
                     e.target.style.transform = 'scale(1.02)';
@@ -901,16 +905,19 @@ function App() {
                     e.target.style.boxShadow = 'none';
                   }}
                 >
-                  Email Me
+                  Connect via Email
                 </a>
                 <a
                   href="/Raiyaan-Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    display: 'inline-block',
-                    padding: '1rem 2.5rem',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '0.875rem 2.5rem',
                     fontSize: '1rem',
+                    lineHeight: '1',
                     fontWeight: '500',
                     background: 'transparent',
                     color: '#fff',
@@ -918,7 +925,8 @@ function App() {
                     borderRadius: '980px',
                     textDecoration: 'none',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    letterSpacing: '0.3px'
+                    letterSpacing: '0.3px',
+                    boxSizing: 'border-box'
                   }}
                   onMouseEnter={(e) => {
                     e.target.style.borderColor = 'rgba(255, 255, 255, 0.4)';
