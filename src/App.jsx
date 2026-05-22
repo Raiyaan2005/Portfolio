@@ -259,7 +259,8 @@ function App() {
                 maxWidth: '700px',
                 fontWeight: '400'
               }}>
-                I build full-stack apps and websites with clean code, solid architecture, and tests that mean something. Python, Java, React, Node; whatever the situation calls for.
+                Full-stack developer with production experience in Python, Java, React, Node.js, and SQL.
+                I build clean, well-tested systems, from normalized schemas to component-driven UIs and thrive in fast-moving agile teams.
               </p>
             </ScrollReveal>
 
