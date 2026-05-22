@@ -397,8 +397,8 @@ function App() {
                   margin: 0,
                   fontWeight: '400'
                 }}>
-                  When I'm not coding, you'll find me learning new technologies, exploring the city or enjoying my time playing soccer.
-                  I'm always eager to connect with like-minded individuals and contribute to impactful projects. Let's build something amazing together!
+                  When I'm not coding or working on assignments, you'll find me learning new technologies, travelling and exploring the city, or enjoying a game of soccer.
+                  I'm drawn to problems where the software genuinely changes how people work. I'm always looking to connect with people building things that matter.
                 </p>
               </div>
             </ScrollReveal>
