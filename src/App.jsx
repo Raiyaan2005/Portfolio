@@ -88,8 +88,8 @@ function App() {
     {
       title: "NovaCare",
       subtitle: "Hospital Management System",
-      description: "Full-stack hospital management desktop application supporting patient/doctor registration, prescription tracking, and real-time search across thousands of records. Designed a normalized MySQL relational schema with optimized queries and indexing, and built a multi-frame Tkinter UI with dynamic tables and input validation; reducing client-side data entry errors by ~40%. CRUD operations are fully decoupled from the UI via a service-oriented design.",
-      technologies: ["Python", "Tkinter", "MySQL", "CRUD"],
+      description: "Full-stack hospital management desktop application supporting patient/doctor registration, medication tracking, and real-time search across thousands of records. Designed a normalized MySQL relational schema with optimized queries and indexing, and built a multi-frame CustomTkinter UI with dynamic tables and input validation; reducing client-side data entry errors by ~40%. CRUD operations are fully decoupled from the UI via a service-oriented design.",
+      technologies: ["Python", "CustomTkinter", "MySQL", "CRUD"],
       github: "https://github.com/Raiyaan2005/NovaCare"
     },
     {
@@ -122,10 +122,10 @@ function App() {
   ];
 
   const skills = {
-    "Programming Languages": ["Python", "Java", "C/C++", "JavaScript", "SQL", "HTML/CSS", "R"],
-    "Web & Backend": ["React", "AWS", "Pandas", "NumPy", "Node.js", "PostgreSQL", "MongoDB", "CRUD Operations", "REST APIs", "Linux/Unix"],
-    "Tools": ["Git", "GitHub", "MS Office", "VS Code", "Figma"],
-    "Concepts": ["AI/LLM Tools", "Automated Testing", "OOP", "UML", "Design Patterns", "Systems Design", "Agile"]
+    "Programming Languages": ["Python", "Pandas", "NumPy", "Java", "C/C++", "JavaScript", "SQL", "HTML/CSS", "R"],
+    "Web & Backend": ["React", "AWS", "Node.js", "PostgreSQL", "MongoDB", "REST APIs", "Linux/Unix"],
+    "Tools": ["Git", "GitHub", "MS Office", "VS Code", "Figma", "Vercel"],
+    "Concepts": ["AI/LLM Tools", "Automated Testing (JUnit & Pytest)", "OOP", "UML", "Design Patterns", "Systems Design", "Agile"]
   };
 
   return (
