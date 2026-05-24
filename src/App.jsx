@@ -265,7 +265,7 @@ function App() {
                 maxWidth: '700px',
                 fontWeight: '400'
               }}>
-                I build full-stack apps and websites with clean code, solid architecture, and tests that mean something. Python, Java, React, Node; whatever the situation calls for. 
+                I build software that's clean, well-architected, and built to last. Python, Java, React, SQL — whatever the job needs.
               </p>
             </ScrollReveal>
 
