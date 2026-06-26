@@ -421,8 +421,7 @@ function App() {
                   marginBottom: '1.5rem',
                   fontWeight: '400'
                 }}>
-                  I'm a second-year student studying Computer Science at the University of Toronto. My passion lies in building scalable, user-centric applications
-                  that solve real-world problems.
+                  I'm a third-year Computer Science student at the University of Toronto. I love building apps and getting into the details of how things actually work under the hood.
                 </p>
                 <p style={{
                   fontSize: '1.125rem',
@@ -431,9 +430,8 @@ function App() {
                   marginBottom: '1.5rem',
                   fontWeight: '400'
                 }}>
-                  With experience in full-stack development and a strong foundation in software architecture, 
-                  I thrive in environments that challenge me to learn and innovate. I'm particularly interested 
-                  in systems design, cloud computing, and creating seamless user experiences through thoughtful design and efficient code.
+                  I've been doing full-stack development for almost 4 years now, and I'm also really into cybersecurity and AI; both feel like they're constantly evolving and there's always something new to dig into.
+                  Right now I'm exploring how these areas intersect, whether that's building smarter tools or thinking more critically about how systems can be secured.
                 </p>
                 <p style={{
                   fontSize: '1.125rem',
@@ -442,8 +440,7 @@ function App() {
                   margin: 0,
                   fontWeight: '400'
                 }}>
-                  When I'm not coding or working on assignments, you'll find me learning new technologies, travelling and exploring the city, or enjoying a game of soccer.
-                  I'm drawn to problems where the software genuinely changes how people work. I'm always looking to connect with people and building things that matter.
+                  Outside of school and coding, I'm usually out exploring the city, travelling somewhere new, or playing soccer. Always down to chat about cool projects or ideas.
                 </p>
               </div>
             </ScrollReveal>
