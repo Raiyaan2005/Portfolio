@@ -964,7 +964,7 @@ function App() {
                   Connect via Email
                 </a>
                 <a
-                  href="/Raiyaan-Resume.pdf"
+                  href="/Raiyaan-Syed-Ahmed-Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
